@@ -38,11 +38,6 @@ def icmp_create(icmp_type, icmp_code, icmp_id, icmp_sequence, data):
     return icmp_header + data
 
 def IPING(src, dst, count):
-    #if len(sys.argv) > 3:
-    #    src = sys.argv[1]
-    #    dst = sys.argv[2]
-    #    count   = int(sys.argv[3])
-
     # ip header fielss
     ip_ihl = 5
     ip_ver = 4
@@ -50,7 +45,7 @@ def IPING(src, dst, count):
     ip_tos_len = 0 # Kernal will fill the correct total length
     ip_id = 54321  # ID of this packet
     ip_frag_off = 0
-    ip_ttl = 64
+    ip_ttl = 1
     ip_proto = 1 
     ip_check = 0 # Kernal will fill the correct checksum
     ip_saddr = socket.inet_aton ( src ) # spoof the source ip if u want to
